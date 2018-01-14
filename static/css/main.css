@@ -1,0 +1,257 @@
+/* Reset CSS */
+@import url('https://fonts.googleapis.com/css?family=Quintessential|Roboto:400,500,700');
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+a {
+	color: white;
+	text-decoration: none;
+}
+
+/* End Reset CSS */
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.header {
+	background-image: url("../img/headerImage_2.png");
+	height: 100vh;
+	width: 100%;
+	color: white;
+	background-size: cover;
+}
+
+.logo {
+	/* width: 100%; */
+	text-align: left;
+	display: inline-block;
+}
+
+.logoText {
+	padding: 20px 0px 0px 10px;
+	font-family: 'Quintessential', cursive;
+	font-size: 2.5em;
+	font-weight: 300;
+}
+
+.toggleBar {
+	width: 40px;
+	height: 30px;
+	position: absolute;
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
+	transform: rotate(0deg);
+	-webkit-transition: .5s ease-in-out;
+	-moz-transition: .5s ease-in-out;
+	-o-transition: .5s ease-in-out;
+	transition: .5s ease-in-out;
+	cursor: pointer;
+	display: inline-block;
+	top: 32px;
+	right: 15px;
+	z-index: 16;
+}
+
+.toggle {
+	display: block;
+	position: absolute;
+	height: 3px;
+	width: 100%;
+	background: #86C232;
+	border-radius: 9px;
+	opacity: 1;
+	left: 0;
+	-webkit-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
+	transform: rotate(0deg);
+	-webkit-transition: .25s ease-in-out;
+	-moz-transition: .25s ease-in-out;
+	-o-transition: .25s ease-in-out;
+	transition: .25s ease-in-out;
+}
+
+.toggleBar .toggle:nth-child(1) {
+	top: 0px;
+}
+
+.toggleBar .toggle:nth-child(2),.toggleBar .toggle:nth-child(3) {
+	top: 10px;
+}
+
+.toggleBar .toggle:nth-child(4) {
+	top: 20px;
+}
+
+.toggleBar.open .toggle:nth-child(1) {
+	top: 10px;
+	width: 0%;
+	left: 50%;
+}
+
+.toggleBar.open .toggle:nth-child(2) {
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+.toggleBar.open .toggle:nth-child(3) {
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+
+.toggleBar.open .toggle:nth-child(4) {
+	top: 10px;
+	width: 0%;
+	left: 50%;
+}
+
+.navWrapper {
+	position: absolute;
+	height: 100vh;
+	width: 100%;
+	top: 0;
+	background-color: #222629;
+	z-index: 5;
+	font-family: "Roboto", sans-serif;
+	font-size: 3em;
+	font-weight: 400;
+	left: -100%;
+	-webkit-transition:500ms ease-in-out;
+    -moz-transition:500ms ease-in-out;
+    -o-transition:500ms ease-in-out;
+    transition:500ms ease-in-out;
+}
+
+.navWrapper ul li {
+	margin: 30px;
+	padding: 10px;
+	-webkit-transition:500ms ease-in-out;
+    -moz-transition:500ms ease-in-out;
+    -o-transition:500ms ease-in-out;
+	transition:500ms ease-in-out;
+	border-bottom: 2px #86C232 solid;
+}
+
+.navWrapper ul li:hover {
+	font-size: 1.2em;
+	-webkit-transition:200ms ease-in-out;
+    -moz-transition:200ms ease-in-out;
+    -o-transition:200ms ease-in-out;
+    transition:200ms ease-in-out;
+}
+
+
+.slogan {
+	margin-top: 20vh;
+	margin-left: 20px;
+	position: relative;
+}
+
+.sloganText {
+	position: absolute;
+	color: #e6e6e6;
+	font-size: 3em;
+	line-height: 70px;
+}
+
+.sloganBar {
+	position: absolute;
+	height: 175px;
+	top: 16px;
+	width: 3px;
+	margin-left: -10px;
+	background-color: #86C232;
+}
+
+.portfolio {
+	margin-top: 70vh;
+	display: flex;
+	justify-content: center;
+}
+
+.btn {
+	width: 150px;
+	height: 40px;
+	background-color: #86C232;
+    border: 0;
+    color: #222629;
+    /* cursor: default; */
+	font-size: 1.35em;
+	font-family: "Roboto", sans-serif;
+	font-weight: 500;
+    overflow: visible;
+	padding: 0;
+	border-radius: 2px;
+	transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+	transition-delay: 0.2s;
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+	cursor: pointer;
+}
+
+.btn:hover {
+	background-color: rgb(159, 233, 55);
+}
+
+@media (max-width: 768px){
+	.navWrapper.active{
+		left: 0px;
+	}
+}
