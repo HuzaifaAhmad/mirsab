@@ -72,6 +72,10 @@ h2 {
 	width: 100%;
 	color: white;
 	background-size: cover;
+	-webkit-box-sizing: border-box; 
+	-moz-box-sizing: border-box;    
+	box-sizing: border-box;
+	padding: 20px;
 }
 
 .logo {
@@ -101,8 +105,8 @@ h2 {
 	transition: .5s ease-in-out;
 	cursor: pointer;
 	display: inline-block;
-	top: 32px;
-	right: 15px;
+	top: 52px;
+	right: 20px;
 	z-index: 16;
 }
 
