@@ -1,5 +1,5 @@
 /* Reset CSS */
-@import url('https://fonts.googleapis.com/css?family=Quintessential|Roboto:300,400,500');
+@import url('https://fonts.googleapis.com/css?family=Quintessential|Roboto:300,400,500|Open+Sans');
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -64,6 +64,11 @@ h1 {
 h2 {
     font-size: 1.7em;
     font-weight: 300;
+}
+
+p {
+	font-family: 'Open Sans', sans-serif;
+	font-size: .9em;
 }
 
 .header {
@@ -308,12 +313,7 @@ h2 {
 	margin: 10px 0px 5px 0px;
 } 
 
-.catg > p {
-	font-size: .9em;
-	font-family: 'Roboto', sans-serif;
-}
-
-.catg:nth-child(4) > .icon {
+.catg:nth-child(3) > .icon {
 	width: 40px;
 }
 
@@ -325,6 +325,5 @@ h2 {
 
 .about p{
 	color: #222629;
-	font-size: .9em;
 	text-align: center;
 }
