@@ -10,7 +10,7 @@ import (
 
 var tpl *template.Template
 
-func main() {
+func init() {
 	tpl = template.Must(template.ParseGlob("templates/*.gohtml"))
 	r := mux.NewRouter()
 	r.HandleFunc("/", indexHandler)
