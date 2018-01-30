@@ -45,7 +45,7 @@ table {
 }
 
 a {
-	color: white;
+	color: #151515;
 	text-decoration: none;
 }
 
@@ -72,10 +72,10 @@ p {
 }
 
 .header {
-	background-image: url("../img/headerImage_2.png");
+	background-image: url("../img/headerImage_3.png");
 	height: 100vh;
 	width: 100%;
-	color: white;
+	color: #151515;
 	background-size: cover;
 	-webkit-box-sizing: border-box; 
 	-moz-box-sizing: border-box;    
@@ -120,7 +120,7 @@ p {
 	position: absolute;
 	height: 3px;
 	width: 100%;
-	background: #86C232;
+	background: #000064;
 	border-radius: 9px;
 	opacity: 1;
 	left: 0;
@@ -157,6 +157,7 @@ p {
 	-moz-transform: rotate(45deg);
 	-o-transform: rotate(45deg);
 	transform: rotate(45deg);
+	background: #e7e7e7;
 }
 
 .toggleBar.open .toggle:nth-child(3) {
@@ -164,6 +165,7 @@ p {
 	-moz-transform: rotate(-45deg);
 	-o-transform: rotate(-45deg);
 	transform: rotate(-45deg);
+	background: #e7e7e7;
 }
 
 .toggleBar.open .toggle:nth-child(4) {
@@ -177,7 +179,7 @@ p {
 	height: 100vh;
 	width: 100%;
 	top: 0;
-	background-color: #222629;
+	background-color: #000064;
 	z-index: 5;
 	font-family: "Roboto", sans-serif;
 	font-size: 2em;
@@ -186,7 +188,7 @@ p {
 	-webkit-transition:500ms ease-in-out;
     -moz-transition:500ms ease-in-out;
     -o-transition:500ms ease-in-out;
-    transition:500ms ease-in-out;
+	transition:500ms ease-in-out;
 }
 
 .navWrapper ul li {
@@ -196,7 +198,11 @@ p {
     -moz-transition:500ms ease-in-out;
     -o-transition:500ms ease-in-out;
 	transition:500ms ease-in-out;
-	border-bottom: 2px #86C232 solid;
+	border-bottom: 2px #e7e7e7 solid;
+}
+
+.navWrapper ul li a {
+	color: #e7e7e7;	
 }
 
 .navWrapper ul li:hover {
@@ -216,7 +222,7 @@ p {
 
 .sloganText {
 	position: absolute;
-	color: #e6e6e6;
+	color: #151515;
 	font-size: 3em;
 	line-height: 70px;
 }
@@ -227,7 +233,7 @@ p {
 	top: 16px;
 	width: 3px;
 	margin-left: -10px;
-	background-color: #86C232;
+	background-color: #000064;
 }
 
 .portfolio {
@@ -239,9 +245,9 @@ p {
 .btn {
 	width: 150px;
 	height: 40px;
-	background-color: #86C232;
+	background-color: #000064;
     border: 0;
-    color: #222629;
+    color: #e7e7e7;
     /* cursor: default; */
 	font-size: 1.35em;
 	font-family: "Roboto", sans-serif;
@@ -256,7 +262,7 @@ p {
 }
 
 .btn:hover {
-	background-color: rgb(159, 233, 55);
+	background-color: #000064;
 }
 
 @media (max-width: 768px){
@@ -281,7 +287,7 @@ p {
 	font-weight: 400;
 	color: #222629;
 	height: 35px;
-	border-bottom: #86C232 solid 2px;
+	border-bottom: #000064 solid 2px;
 }
 
 .title > h2 {
@@ -312,10 +318,6 @@ p {
 	font-size: 1.5em;
 	margin: 10px 0px 5px 0px;
 } 
-
-.catg:nth-child(3) > .icon {
-	width: 40px;
-}
 
 /* _____________________________*/
 .abt-img > img {
