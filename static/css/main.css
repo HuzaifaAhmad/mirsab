@@ -1,5 +1,5 @@
 /* Reset CSS */
-@import url('https://fonts.googleapis.com/css?family=Quintessential|Roboto:300,400,500|Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Quintessential|Roboto:300,400,500|Montserrat:500');
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -45,7 +45,7 @@ table {
 }
 
 a {
-	color: #151515;
+	color: #222629;
 	text-decoration: none;
 }
 
@@ -67,15 +67,16 @@ h2 {
 }
 
 p {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Roboto', sans-serif;
 	font-size: .9em;
+	line-height: 1.2;
 }
 
 .header {
 	background-image: url("../img/headerImage_3.png");
 	height: 100vh;
 	width: 100%;
-	color: #151515;
+	color: #222629;
 	background-size: cover;
 	-webkit-box-sizing: border-box; 
 	-moz-box-sizing: border-box;    
@@ -90,10 +91,11 @@ p {
 }
 
 .logoText {
-	padding: 20px 0px 0px 10px;
-	font-family: 'Quintessential', cursive;
+	padding: 21px 0px 0px 0px;
+	font-family: 'Montserrat', sans-serif;
 	font-size: 2.5em;
 	font-weight: 300;
+	color: #010b64
 }
 
 .toggleBar {
@@ -146,6 +148,10 @@ p {
 	top: 20px;
 }
 
+.toggleBar.open {
+	position: fixed;
+}
+
 .toggleBar.open .toggle:nth-child(1) {
 	top: 10px;
 	width: 0%;
@@ -175,7 +181,7 @@ p {
 }
 
 .navWrapper {
-	position: absolute;
+	position: fixed;
 	height: 100vh;
 	width: 100%;
 	top: 0;
@@ -191,8 +197,12 @@ p {
 	transition:500ms ease-in-out;
 }
 
+.navWrapper ul {
+	margin-top: 80px;
+}
+
 .navWrapper ul li {
-	margin: 60px;
+	margin: 35px 60px 0px 60px;
 	padding: 10px;
 	-webkit-transition:500ms ease-in-out;
     -moz-transition:500ms ease-in-out;
@@ -222,7 +232,7 @@ p {
 
 .sloganText {
 	position: absolute;
-	color: #151515;
+	color: #222629;
 	font-size: 3em;
 	line-height: 70px;
 }
@@ -328,4 +338,34 @@ p {
 .about p{
 	color: #222629;
 	text-align: center;
+}
+
+/*________________*/
+
+.footer {
+	text-align: center;
+	background-color: #000064;
+	color: #e7e7e7;
+}
+
+.social {
+	margin: 0px;
+	width: 100%;
+}
+
+.icons  i {
+	font-size: 1.5em;
+	padding: 10px;
+}
+
+.footer a {
+	color: #e7e7e7;
+}
+
+.footer p {
+	font-size: .55em;
+}
+
+.links {
+	padding-top: 10px;
 }
