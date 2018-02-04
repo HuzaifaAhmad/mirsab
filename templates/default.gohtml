@@ -14,11 +14,35 @@
 
         <title>Mirsab Mirza</title>
     </head>
-<body>
+    <body id="body">
+        <div class="header" id="header">
+            <div class="logo">
+                <h1 class="logoText"><a href="/">Mirsab Mirza</a></h1>
+            </div>
+            <div class="toggleBar" id="t">
+                <span class="toggle"></span>
+                <span class="toggle"></span>
+                <span class="toggle"></span>
+                <span class="toggle"></span>
+            </div>
+            <hr>
+            <div class="navWrapper" id="nav">
+                
+                <nav class="nav">
+                    <ul>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="#">Coaching</a></li>
+                        <li><a href="#">Portfolio</a></li>
+                        <li><a href="#">Projects</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
 {{ end }}
 
 {{ define "footer" }}
-    <div class="container footer">
+    <footer class="container footer">
         <div class="social">
             <div class="follow-title">
                 <p>Follow Me</p>
@@ -35,7 +59,7 @@
             
 
         </div>
-    </div>
+    </footer>
     <script src="js/main.js"></script>
 </body>
 </html>

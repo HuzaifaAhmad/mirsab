@@ -1,4 +1,3 @@
-
 var x = document.querySelector('#t')
 x.onclick = open;
 function open(){
@@ -6,4 +5,3 @@ function open(){
     document.getElementById('header').classList.toggle('active')
     document.getElementById('t').classList.toggle('open');
 }
-

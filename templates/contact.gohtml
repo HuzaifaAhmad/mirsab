@@ -1,0 +1,29 @@
+{{ template "header" }}
+
+<div class="container contact">
+    <div class="title">
+        <h1>Contact</h1>
+    </div>
+    <form action="/contact" method="POST" class="form">
+        <div class="input-container">
+            <input type="text" name="name" required="required"/>
+            <label for="#{label}">Name</label>
+            <div class="bar"></div>
+        </div>
+        <div class="input-container">
+            <input type="email" name="email" required="required"/>
+            <label for="#{label}">Email</label>
+            <div class="bar"></div>
+        </div>
+        <div class="input-container">
+            <input type="text" name="msg" required="required"/>
+            <label for="#{label}">Message</label>
+            <div class="bar"></div>
+        </div>
+        <div class="sbmt">
+            <button class="btn">Send</button>
+        </div>
+    </form>
+</div>
+
+{{ template "footer" }}
