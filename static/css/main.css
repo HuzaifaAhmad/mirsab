@@ -412,7 +412,8 @@ p {
     transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     transition-delay: 0.2s;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
-    cursor: pointer;
+	cursor: pointer;
+	margin-bottom: 20px;
 }
 
 .btn:hover {
