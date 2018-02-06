@@ -42,6 +42,10 @@ body {
     min-height: 100%;
     line-height: 1;
 }
+
+body.open {
+	overflow: hidden;
+}
 ol, ul {
 	list-style: none;
 }
