@@ -6,3 +6,7 @@ function open(){
     document.getElementById('t').classList.toggle('open');
     document.body.classList.toggle('open');
 }
+
+function hideMsg() {
+    document.getElementById('login-msg').classList.add('hidden');
+}

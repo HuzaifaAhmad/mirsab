@@ -1,0 +1,39 @@
+{{  template "header" }}
+
+<div class="container login">
+    <div class="title">
+        <h1>Sign Up</h1>
+    </div>
+    <form action="/signup" method="POST" class="form">
+        <div class="input-container">
+            <input type="text" name="fname" required="required"/>
+            <label for="#{label}">First Name</label>
+            <div class="bar"></div>
+        </div>
+        <div class="input-container">
+            <input type="text" name="lname" required="required"/>
+            <label for="#{label}">Last Name</label>
+            <div class="bar"></div>
+        </div>
+        <div class="input-container">
+            <input type="email" name="email" required="required"/>
+            <label for="#{label}">Email</label>
+            <div class="bar"></div>
+        </div>
+        <div class="input-container">
+            <input type="password" name="pass" required="required"/>
+            <label for="#{label}">Password</label>
+            <div class="bar"></div>
+        </div>
+        <div class="input-container">
+            <input type="password" name="repass" required="required"/>
+            <label for="#{label}">Confirm Password</label>
+            <div class="bar"></div>
+        </div>
+        <div class="sbmt">
+            <button class="btn">Sign Up</button>
+        </div>
+    </form>
+</div>
+
+{{ template "footer" }}
