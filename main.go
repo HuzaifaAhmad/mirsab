@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"html/template"
 	"log"
 	"net/http"
@@ -16,7 +17,8 @@ func main() {
 	r := mux.NewRouter()
 	r.HandleFunc("/", indexHandler)
 	r.HandleFunc("/about", aboutHandler)
-	r.HandleFunc("/contact", contactHandler)
+	r.HandleFunc("/contact", contactHandler).Methods("GET")
+	r.HandleFunc("/contact", handlers.Contact).Methods("POST")
 	r.HandleFunc("/login", loginHanler).Methods("GET")
 	r.HandleFunc("/login", handlers.Login).Methods("POST")
 	r.HandleFunc("/logout", handlers.Logout)
@@ -24,10 +26,13 @@ func main() {
 	r.HandleFunc("/signup", handlers.SignUp).Methods("POST")
 	r.HandleFunc("/admin", handlers.Admin)
 	r.HandleFunc("/admin/portfolio", handlers.Portfolio)
-	r.HandleFunc("/admin/portfolio/upload", handlers.Upload)
+	r.HandleFunc("/admin/portfolio/delete", handlers.Delete).Methods("POST")
+	r.HandleFunc("/admin/portfolio/upload", handlers.Upload).Methods("GET")
+	r.HandleFunc("/admin/portfolio/upload", handlers.Uploader).Methods("POST")
 	r.HandleFunc("/admin/portfolio/temp-post", handlers.Temp).Methods("POST")
 	r.PathPrefix("/").Handler(http.FileServer(http.Dir("./static/")))
 	http.Handle("/", r)
+	fmt.Println("Server Started")
 	http.ListenAndServe(":8080", nil)
 }
 

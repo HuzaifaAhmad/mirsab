@@ -353,6 +353,36 @@ p {
   .input-container input:focus ~ .bar:before, .input-container input:focus ~ .bar:after {
     width: 50%;
   }
+
+  .input-container textarea {
+	margin-top: 10px;
+    outline: none;
+    z-index: 1;
+    position: relative;
+    background: none;
+    width: 100%;
+    height: 200px;
+    border: 0;
+    color: #212121;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2em;
+    font-weight: 400;
+  }
+  .input-container textarea:focus ~ label {
+    color: #9d9d9d;
+    -webkit-transform: translate(-12%, -50%) scale(0.75);
+            transform: translate(-12%, -50%) scale(0.75);
+  }
+  .input-container textarea:focus ~ .bar:before, .input-container textarea:focus ~ .bar:after {
+    width: 50%;
+  }
+
+  .input-container textarea:valid ~ label {
+    color: #9d9d9d;
+    -webkit-transform: translate(-12%, -50%) scale(0.75);
+            transform: translate(-12%, -50%) scale(0.75);
+  }
+
   .input-container input:valid ~ label {
     color: #9d9d9d;
     -webkit-transform: translate(-12%, -50%) scale(0.75);

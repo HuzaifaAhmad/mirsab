@@ -11,10 +11,8 @@
         </form>
     </div>
     <div id="imgs">
-    {{ range .File }}
-        <img src= {{ . }} alt="Photo">
-    {{ end }}
     </div>
+    <button type="submit" onclick="upload(event)">Submit</button>
 </div>
 
 {{ template "footer" }}
