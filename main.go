@@ -7,6 +7,7 @@ import (
 	"net/http"
 
 	"github.com/HuzaifaAhmad/mirsab/handlers"
+	"github.com/HuzaifaAhmad/mirsab/handlers/admin"
 	"github.com/gorilla/mux"
 )
 
@@ -20,16 +21,17 @@ func main() {
 	r.HandleFunc("/contact", contactHandler).Methods("GET")
 	r.HandleFunc("/contact", handlers.Contact).Methods("POST")
 	r.HandleFunc("/login", loginHanler).Methods("GET")
-	r.HandleFunc("/login", handlers.Login).Methods("POST")
-	r.HandleFunc("/logout", handlers.Logout)
+	r.HandleFunc("/login", admin.Login).Methods("POST")
+	r.HandleFunc("/logout", admin.Logout)
 	r.HandleFunc("/signup", signupHanler).Methods("GET")
 	r.HandleFunc("/signup", handlers.SignUp).Methods("POST")
-	r.HandleFunc("/admin", handlers.Admin)
-	r.HandleFunc("/admin/portfolio", handlers.Portfolio)
-	r.HandleFunc("/admin/portfolio/delete", handlers.Delete).Methods("POST")
-	r.HandleFunc("/admin/portfolio/upload", handlers.Upload).Methods("GET")
-	r.HandleFunc("/admin/portfolio/upload", handlers.Uploader).Methods("POST")
-	r.HandleFunc("/admin/portfolio/temp-post", handlers.Temp).Methods("POST")
+	r.HandleFunc("/admin", admin.Dashboard)
+	r.HandleFunc("/admin/portfolio", admin.Portfolio)
+	r.HandleFunc("/admin/portfolio/delete", admin.Delete).Methods("POST")
+	r.HandleFunc("/admin/portfolio/upload", admin.Upload).Methods("GET")
+	r.HandleFunc("/admin/portfolio/upload", admin.Uploader).Methods("POST")
+	r.HandleFunc("/admin/portfolio/temp-post", admin.Temp).Methods("POST")
+	r.HandleFunc("/admin/contact", admin.Contact).Methods("GET")
 	r.PathPrefix("/").Handler(http.FileServer(http.Dir("./static/")))
 	http.Handle("/", r)
 	fmt.Println("Server Started")
@@ -51,14 +53,11 @@ func aboutHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func contactHandler(w http.ResponseWriter, r *http.Request) {
-	err := tpl.ExecuteTemplate(w, "contact.gohtml", nil)
-	if err != nil {
-		log.Fatalf("template execution: %s", err)
-	}
+	handlers.ContactPage(w, r, tpl)
 }
 
 func loginHanler(w http.ResponseWriter, r *http.Request) {
-	handlers.LoginHandler(w, r, tpl)
+	admin.LoginHandler(w, r, tpl)
 }
 
 func signupHanler(w http.ResponseWriter, r *http.Request) {

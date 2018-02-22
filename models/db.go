@@ -4,6 +4,7 @@ import (
 	"database/sql"
 	"fmt"
 
+	//Psql Driver
 	_ "github.com/lib/pq"
 )
 

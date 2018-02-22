@@ -9,6 +9,7 @@ import (
 	"golang.org/x/crypto/bcrypt"
 )
 
+//SignUp add processes the sign up form data then send it to the model
 func SignUp(w http.ResponseWriter, r *http.Request) {
 	fname := r.FormValue("fname")
 	lname := r.FormValue("lname")

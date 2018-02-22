@@ -265,7 +265,9 @@ li a {
 	font-size: 0;
 	display: -ms-flexbox;
 	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
 	-ms-flex-direction: column;
+	flex-direction: column;
 	-webkit-flex-flow: row wrap; 
 	flex-flow: row wrap; 
 	justify-content: center;
@@ -276,6 +278,7 @@ li a {
 .col {
 	-webkit-box-flex: auto;
 	-ms-flex: auto;
+	flex: auto;
 	width: 200px; 
 	margin: .5vw
 }
@@ -333,5 +336,26 @@ li a {
 .inputfile:focus + label,
 .inputfile + label:hover {
     background-color: #0000a5;
+}
+
+.contact {
+	width: 100%;
+	padding: 20px;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
 }
 

@@ -1,23 +1,27 @@
 {{ template "header" }}
 
 <div class="contact">
-    <div class="title port">
-        <h1>Portfolio</h1>
-        <div class="addPic">
-            <a href="portfolio/upload">
-                <i class="fas fa-plus"></i>
-                <p>Add Picture</p>
-            </a>
-        </div>
+    <div class="title">
+        <h1>Contacts</h1>
     </div>
 
-    <div class="imgs">
-            {{ range .Img }}
-            <div class="col">
-                <img onclick="deletePic(event)" src= "/{{ . }} "alt="" srcset="">
-            </div>
-            {{ end }}
-    </div>
+    <table>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Subject</th>
+          <th>Message</th>
+        </tr>
+        {{ range . }}
+        <tr>
+            <td>{{ .Name }}</td>
+            <td>{{ .Email }}</td>
+            <td>{{ .Subject }}</td>
+            <td>{{ .Msg }}</td>
+        </tr>
+        {{ end }}
+      </table>
+
 </div>
 
 {{ template "footer" }}

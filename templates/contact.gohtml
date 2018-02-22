@@ -16,6 +16,11 @@
             <div class="bar"></div>
         </div>
         <div class="input-container">
+            <input type="text" name="subject" required="required"/>
+            <label for="#{label}">Subject</label>
+            <div class="bar"></div>
+        </div>
+        <div class="input-container">
             <textarea name="msg" required="required"/></textarea>
             <label for="#{label}">Message</label>
             <div class="bar"></div>
@@ -23,6 +28,11 @@
         <div class="sbmt">
             <button class="btn">Send</button>
         </div>
+        {{ if .Msg }}
+        <div class="success-msg">
+            <h3>{{ .Msg }}</h3>
+        </div>
+        {{ end }}
     </form>
 </div>
 
