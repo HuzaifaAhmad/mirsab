@@ -32,6 +32,7 @@ func main() {
 	r.HandleFunc("/admin/portfolio/upload", admin.Uploader).Methods("POST")
 	r.HandleFunc("/admin/portfolio/temp-post", admin.Temp).Methods("POST")
 	r.HandleFunc("/admin/contact", admin.Contact).Methods("GET")
+	r.HandleFunc("/admin/contact/{id:[0-9]+}", admin.ContactDetails)
 	r.PathPrefix("/").Handler(http.FileServer(http.Dir("./static/")))
 	http.Handle("/", r)
 	fmt.Println("Server Started")

@@ -68,3 +68,10 @@ var deletePic = function(e) {
     x.open("POST", "portfolio/delete");
     x.send(elemet);
 }
+
+var contactRow = function(e) {
+    console.log(e);
+    window.location.href = '/admin/contact/' + e;
+
+}
+

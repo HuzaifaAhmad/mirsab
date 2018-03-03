@@ -3,21 +3,24 @@ package models
 import (
 	"errors"
 	"log"
+	"time"
 )
 
 //Contact stores contact info
 type Contact struct {
+	ID      int
 	Name    string
 	Email   string
 	Subject string
 	Msg     string
+	Time    string
 }
 
 //AddContact => contact table in DB
 func AddContact(cntc Contact) error {
-	stmt := `INSERT INTO contact (name, email, subject, msg) VALUES ($1, $2, $3, $4) RETURNING id;`
+	stmt := `INSERT INTO contact (name, email, subject, msg, created_at) VALUES ($1, $2, $3, $4, $5) RETURNING id;`
 	id := 0
-	err := DB.QueryRow(stmt, cntc.Name, cntc.Email, cntc.Subject, cntc.Msg).Scan(&id)
+	err := DB.QueryRow(stmt, cntc.Name, cntc.Email, cntc.Subject, cntc.Msg, cntc.Time).Scan(&id)
 	if err != nil {
 		log.Fatal(err)
 		err := errors.New("could not process contact form")
@@ -29,7 +32,7 @@ func AddContact(cntc Contact) error {
 //GetContacts gets information from DB
 func GetContacts() ([]Contact, error) {
 	var cont []Contact
-	stmt := `SELECT name, email, subject, msg FROM contact;`
+	stmt := `SELECT id, name, email, subject, msg, created_at FROM contact;`
 	rows, err := DB.Query(stmt)
 	if err != nil {
 		log.Fatal(err)
@@ -38,11 +41,17 @@ func GetContacts() ([]Contact, error) {
 	defer rows.Close()
 	for rows.Next() {
 		var c Contact
-		err = rows.Scan(&c.Name, &c.Email, &c.Subject, &c.Msg)
+		err = rows.Scan(&c.ID, &c.Name, &c.Email, &c.Subject, &c.Msg, &c.Time)
 		if err != nil {
 			log.Fatal(err)
 			return []Contact{}, nil
 		}
+		ti, err := time.Parse("2006-01-02T15:04:00Z", c.Time)
+		if err != nil {
+			log.Fatal(err)
+		}
+		c.Time = ti.Format("Jan 2, 2006 3:04PM")
+
 		cont = append(cont, c)
 	}
 	err = rows.Err()

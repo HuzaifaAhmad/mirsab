@@ -4,6 +4,7 @@ import (
 	"html/template"
 	"log"
 	"net/http"
+	"time"
 
 	"github.com/HuzaifaAhmad/mirsab/models"
 )
@@ -28,11 +29,13 @@ func ContactPage(w http.ResponseWriter, r *http.Request, tpl *template.Template)
 
 //Contact handles the contact form
 func Contact(w http.ResponseWriter, r *http.Request) {
+	t := time.Now()
+	ti := t.Format("2006-01-02 15:04")
 	cntc.Name = r.FormValue("name")
 	cntc.Email = r.FormValue("email")
 	cntc.Subject = r.FormValue("subject")
 	cntc.Msg = r.FormValue("msg")
-
+	cntc.Time = ti
 	// mg := mailgun.NewMailgun("sandboxd6d9d06b590b44d7b8dcacae8c7e1528.mailgun.org", "key-27a0d63a966e0691e65677ccf99bf804", "https://api.mailgun.net/v3/sandboxd6d9d06b590b44d7b8dcacae8c7e1528.mailgun.org")
 	// mail := mailgun.NewMessage(
 	// 	"Excited User <"+cntc.Email+">",

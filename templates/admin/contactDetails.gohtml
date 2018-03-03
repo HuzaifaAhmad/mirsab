@@ -1,0 +1,27 @@
+{{ template "header" }}
+
+<div class="contact">
+    <div class="title">
+        <h1>Contacts Details</h1>
+    </div>
+
+    <table class="contactDetails">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Subject</th>
+            <th>Sent On</th>
+            <th>Message</th>
+        </tr>
+            <tr id="{{ .ID }}" >
+                <td>{{ .Name }}</td>
+                <td>{{ .Email }}</td>
+                <td>{{ .Subject }}</td>
+                <td>{{ .Time }}</td>
+                <td>{{ .Msg }}</td>
+            </tr>
+      </table>
+
+</div>
+
+{{ template "footer" }}

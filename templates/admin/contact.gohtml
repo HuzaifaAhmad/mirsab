@@ -7,18 +7,18 @@
 
     <table>
         <tr>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Subject</th>
-          <th>Messages</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Subject</th>
+            <th>Sent On</th>
         </tr>
         {{ range . }}
-        <tr>
-            <td>{{ .Name }}</td>
-            <td>{{ .Email }}</td>
-            <td>{{ .Subject }}</td>
-            <td>{{ .Msg }}</td>
-        </tr>
+            <tr onclick="contactRow(this.id)" id="{{ .ID }}" >
+                <td>{{ .Name }}</td>
+                <td>{{ .Email }}</td>
+                <td>{{ .Subject }}</td>
+                <td>{{ .Time }}</td>
+            </tr>
         {{ end }}
       </table>
 
