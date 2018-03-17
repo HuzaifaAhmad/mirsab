@@ -1,0 +1,39 @@
+{{ template "header" }}
+
+<div class="container contact">
+    <div class="title">
+        <h1>Contact</h1>
+    </div>
+    <form action="/contact" method="POST" class="form">
+        <div class="input-container">
+            <input type="text" name="name" required="required"/>
+            <label for="#{label}">Name</label>
+            <div class="bar"></div>
+        </div>
+        <div class="input-container">
+            <input type="email" name="email" required="required"/>
+            <label for="#{label}">Email</label>
+            <div class="bar"></div>
+        </div>
+        <div class="input-container">
+            <input type="text" name="subject" required="required"/>
+            <label for="#{label}">Subject</label>
+            <div class="bar"></div>
+        </div>
+        <div class="input-container">
+            <textarea name="msg" required="required"/></textarea>
+            <label for="#{label}">Message</label>
+            <div class="bar"></div>
+        </div>
+        <div class="sbmt">
+            <button class="btn">Send</button>
+        </div>
+        {{ if .Msg }}
+        <div class="success-msg">
+            <h3>{{ .Msg }}</h3>
+        </div>
+        {{ end }}
+    </form>
+</div>
+
+{{ template "footer" }}

@@ -1,0 +1,61 @@
+{{ define "header" }}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+        <!-- css -->
+        <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">        
+        <link rel="stylesheet" href="/css/admin.css">
+
+        <link rel="icon" href="../img/favicon.ico">
+
+        <title>Admin | Mirsab Mirza</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header" id="header">
+                <div class="logo">
+                    <h1 class="logoText"><a href="/">Admin</a></h1>
+                </div>
+                <div class="logout">
+                    <a href="/logout"><p>Logout </p></a>
+                    <a href="/logout"><i class="fas fa-sign-out-alt"></i></a>
+                </div>
+            </div>
+            <div class="content">
+
+                    <div class="navWrapper" id="nav">
+                            <nav class="nav">
+                                <ul>
+                                    <li><a href="/admin">Dashboard</a></li>
+                                    <li><a href="#">Pages</a></li>
+                                    <li><a href="#">Coaching</a></li>
+                                    <li><a href="/admin/contact">Contact</a></li>
+                                    <li><a href="/admin/portfolio">Portfolio</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+        
+        
+{{ end }}
+
+{{ define "footer" }}
+
+    </div>
+    <div class="footer">
+        <div class="links">
+            <p>copyright &copy 2018 Mirsab Mirza | <a href="#">Terms of use</a> | <a href="#">Privacy Policy</a></p>
+            
+
+        </div>
+    </div>
+
+</div>
+
+<script src="/js/admin.js"></script>
+</body>
+</html>
+{{ end }}

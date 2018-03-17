@@ -1,0 +1,380 @@
+/* Reset CSS */
+@import url('https://fonts.googleapis.com/css?family=Quintessential|Roboto:300,400,500|Montserrat:500');
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+html{
+    height: 100%;
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+body {
+    position: relative;
+    margin: 0;
+	height: 100%;
+    min-height: 100%;
+    line-height: 1;
+}
+
+body.open {
+	overflow: hidden;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+a {
+	color: #222629;
+	text-decoration: none;
+}
+
+/* End Reset CSS */
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+#body.open-body {
+	overflow-y: hidden;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.7em;
+}
+
+p {
+	font-family: 'Roboto', sans-serif;
+	font-size: .9em;
+	line-height: 1.2;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+	margin: 0px;
+    left: 0px;
+    right: 0px;
+}
+
+.header {
+	display: flex;
+	width: 100%;
+	color: #f1f1f1;
+	background-color: #000064;
+	background-size: cover;
+	-webkit-box-sizing: border-box; 
+	-moz-box-sizing: border-box;    
+	box-sizing: border-box;
+	padding: 10px 10px 10px 10px;
+}
+
+.header a {
+	color: #f1f1f1;
+}
+
+.logo {
+	margin-right: auto;
+}
+
+.logoText {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 300;
+	color: #f1f1f1;
+}
+
+.footer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+    right: 0;
+    bottom: 0;
+    left: 0;
+	text-align: center;
+	background-color: #000064;
+	color: #e7e7e7;
+	padding: 20px;
+}
+
+
+.footer a {
+	color: #e7e7e7;
+}
+
+.footer p {
+	font-size: .55em;
+}
+
+.links {
+	padding-top: 10px;
+}
+
+.title {
+	font-weight: 400;
+	color: #333;
+	padding-bottom: 5px;
+	border-bottom: #00006438 solid 1px;
+	margin-bottom: 10px;
+}
+
+.title.port {
+	display: flex;
+	justify-content: space-between;
+}
+
+
+.sbmt {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.btn {
+    width: 150px;
+    height: 40px;
+    background-color: #000064;
+    border: 0;
+    color: #e7e7e7;
+    /* cursor: default; */
+    font-size: 1.35em;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    overflow: visible;
+    padding: 0;
+    border-radius: 2px;
+    transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    transition-delay: 0.2s;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+	cursor: pointer;
+	margin-bottom: 20px;
+}
+
+.btn:hover {
+	background-color: #0000a5;
+}
+
+.navWrapper {
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
+	background-color: #e7e7e7;
+	width: 200px;
+}
+
+.nav li {
+	margin-bottom: 10px;
+	display: block;
+	width: 100%;
+}
+
+.nav li:last-child {
+	margin-bottom: 0px;
+}
+
+.nav li:hover {
+	display: block;
+	background-color: #000064;
+	color: #e7e7e7;
+	border-radius: 4px;
+}
+
+li:hover a  {
+	color: #e7e7e7;
+}
+
+li a {
+	display: block;
+	width: 100%;
+	height: 100%;
+	padding: 15px;
+}
+
+.content {
+	display: flex;
+	flex: 1;
+	height: 100%;
+}
+
+.admin{
+
+	display: flex;
+	flex-direction: column;
+}
+
+.logout	 {
+	display: flex;
+	margin-bottom: auto;
+	margin-top: auto;
+}
+
+.fas {
+	margin-left: 8px;
+}
+
+.portfolio {
+	width: 100%;
+	padding: 20px;
+}
+
+.imgs {
+	padding: 5px;
+	font-size: 0;
+	display: -ms-flexbox;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-flex-flow: row wrap; 
+	flex-flow: row wrap; 
+	justify-content: center;
+	display: -webkit-box;
+	display: flex;
+}
+
+.col {
+	-webkit-box-flex: auto;
+	-ms-flex: auto;
+	flex: auto;
+	width: 200px; 
+	margin: .5vw
+}
+
+.imgs .col img {
+	width: 100%;
+	height: auto;
+}
+
+.addPic a {
+	display: flex;
+	align-items: baseline;
+	padding: 10px;
+	background-color: #000064;
+	border-radius: 2px;
+	color: #e7e7e7;
+	font-weight: 500;
+	
+}
+
+.addPic a:hover {
+	background-color: #0000a5;
+	
+}
+
+.addPic i, .addPic p {
+	margin-right: 10px;
+}
+
+.addPic i {
+	position: relative;
+	bottom: .6px;
+	font-size: 13px;
+}
+
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.inputfile + label {
+    font-size: .9em;
+	font-weight: 500;
+	padding: 10px;
+    color: white;
+    background-color:#000064;
+	display: inline-block;
+	cursor: pointer;
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+    background-color: #0000a5;
+}
+
+.contact {
+	width: 100%;
+	padding: 20px;
+}
+
+table {
+	font-family: arial, sans-serif;
+	font-size: .9em;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.detailsRow:hover{
+	cursor: pointer;
+}
+
+td, th {
+    border-bottom: 1px solid #dddddd;
+	text-align: left;
+	width: 25%;
+    padding: 10px;
+}
+
+
+.contactDetails {
+	display: flex;
+}
+
+.contactDetails h3 {
+	margin: 11px;
+	padding: 20px;
+	margin-left: 0px;
+	padding-left: 0px;
+}
+
+.contactDetails p {
+	margin: 10px;
+	padding: 20px;
+	background-color: #e7e7e7;
+}

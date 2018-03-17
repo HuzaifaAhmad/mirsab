@@ -1,0 +1,18 @@
+{{ template "header" }}
+
+<div class="portfolio">
+    <div class="title port">
+        <h1>Upload</h1>
+    </div>
+    <div class="addPic">
+        <form action="" id="form" method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" id="file" class="inputfile" onchange="ch(event)"/>
+            <label for="file">Choose a file</label>
+        </form>
+    </div>
+    <div id="imgs">
+    </div>
+    <button type="submit" onclick="upload(event)">Submit</button>
+</div>
+
+{{ template "footer" }}
