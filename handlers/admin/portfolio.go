@@ -28,11 +28,6 @@ type Imgs struct {
 
 //Portfolio reads all images in static/imgs/portfolio dir and send it to the portfolio template
 func Portfolio(w http.ResponseWriter, r *http.Request) {
-	email := getSession(r)
-	if email == "" {
-		http.Redirect(w, r, "/login", 302)
-		return
-	}
 	var imgSrc []string
 
 	root := "static/img/portfolio/"
@@ -61,13 +56,7 @@ func Portfolio(w http.ResponseWriter, r *http.Request) {
 
 //Temp holder for the Files. TODO: ADD the images to Imgs struct
 func Temp(w http.ResponseWriter, r *http.Request) {
-
 	var xf []File
-	email := getSession(r)
-	if email == "" {
-		http.Redirect(w, r, "/login", http.StatusNonAuthoritativeInfo)
-		return
-	}
 
 	src, _, err := r.FormFile("file")
 	if src == nil {
@@ -103,12 +92,6 @@ func Temp(w http.ResponseWriter, r *http.Request) {
 
 //Uploader writes the images to files in the static/img/portfolio/ directory
 func Uploader(w http.ResponseWriter, r *http.Request) {
-	email := getSession(r)
-	if email == "" {
-		http.Redirect(w, r, "/login", http.StatusNonAuthoritativeInfo)
-		return
-	}
-
 	src := r.Body
 	if src == nil {
 		fmt.Println("Empty")
@@ -160,12 +143,6 @@ func Uploader(w http.ResponseWriter, r *http.Request) {
 
 //Delete deletes the image from dir
 func Delete(w http.ResponseWriter, r *http.Request) {
-	email := getSession(r)
-	if email == "" {
-		http.Redirect(w, r, "/login", http.StatusNonAuthoritativeInfo)
-		return
-	}
-
 	src := r.Body
 	bs, err := ioutil.ReadAll(src)
 	if err != nil {

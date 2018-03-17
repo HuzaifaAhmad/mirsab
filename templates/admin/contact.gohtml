@@ -13,7 +13,7 @@
             <th>Sent On</th>
         </tr>
         {{ range . }}
-            <tr onclick="contactRow(this.id)" id="{{ .ID }}" >
+            <tr class="detailsRow" onclick="contactRow(this.id)" id="{{ .ID }}" >
                 <td>{{ .Name }}</td>
                 <td>{{ .Email }}</td>
                 <td>{{ .Subject }}</td>

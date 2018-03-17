@@ -350,6 +350,10 @@ table {
     width: 100%;
 }
 
+.detailsRow:hover{
+	cursor: pointer;
+}
+
 td, th {
     border-bottom: 1px solid #dddddd;
 	text-align: left;
@@ -358,3 +362,19 @@ td, th {
 }
 
 
+.contactDetails {
+	display: flex;
+}
+
+.contactDetails h3 {
+	margin: 11px;
+	padding: 20px;
+	margin-left: 0px;
+	padding-left: 0px;
+}
+
+.contactDetails p {
+	margin: 10px;
+	padding: 20px;
+	background-color: #e7e7e7;
+}

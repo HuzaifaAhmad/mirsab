@@ -8,6 +8,7 @@ import (
 
 	"github.com/HuzaifaAhmad/mirsab/handlers"
 	"github.com/HuzaifaAhmad/mirsab/handlers/admin"
+	"github.com/codegangsta/negroni"
 	"github.com/gorilla/mux"
 )
 
@@ -25,18 +26,40 @@ func main() {
 	r.HandleFunc("/logout", admin.Logout)
 	r.HandleFunc("/signup", signupHanler).Methods("GET")
 	r.HandleFunc("/signup", handlers.SignUp).Methods("POST")
-	r.HandleFunc("/admin", admin.Dashboard)
-	r.HandleFunc("/admin/portfolio", admin.Portfolio)
-	r.HandleFunc("/admin/portfolio/delete", admin.Delete).Methods("POST")
-	r.HandleFunc("/admin/portfolio/upload", admin.Upload).Methods("GET")
-	r.HandleFunc("/admin/portfolio/upload", admin.Uploader).Methods("POST")
-	r.HandleFunc("/admin/portfolio/temp-post", admin.Temp).Methods("POST")
-	r.HandleFunc("/admin/contact", admin.Contact).Methods("GET")
-	r.HandleFunc("/admin/contact/{id:[0-9]+}", admin.ContactDetails)
+
+	adm := mux.NewRouter()
+
+	r.PathPrefix("/admin").Handler(negroni.New(
+		negroni.HandlerFunc(auth),
+		negroni.Wrap(adm),
+	))
+
+	ad := adm.PathPrefix("/admin").Subrouter()
+	ad.Path("").HandlerFunc(admin.Dashboard).Methods("GET")
+	ad.Path("/portfolio").HandlerFunc(admin.Portfolio).Methods("GET")
+	ad.Path("/portfolio/delete").HandlerFunc(admin.Delete).Methods("POST")
+	ad.Path("/portfolio/upload").HandlerFunc(admin.Upload).Methods("GET")
+	ad.Path("/portfolio/upload").HandlerFunc(admin.Uploader).Methods("POST")
+	ad.Path("/portfolio/temp-post").HandlerFunc(admin.Temp).Methods("POST")
+	ad.Path("/contact").HandlerFunc(admin.Contact).Methods("GET")
+	ad.Path("/contact/{id:[0-9]+}").HandlerFunc(admin.ContactDetails).Methods("GET")
+
 	r.PathPrefix("/").Handler(http.FileServer(http.Dir("./static/")))
-	http.Handle("/", r)
+
+	// http.Handle("/", r)
 	fmt.Println("Server Started")
-	http.ListenAndServe(":8080", nil)
+	http.ListenAndServe(":8080", r)
+}
+
+func auth(w http.ResponseWriter, r *http.Request, next http.HandlerFunc) {
+	email := admin.GetSession(r)
+	if email == "" {
+		http.Redirect(w, r, "/login", 302)
+		return
+	}
+
+	next(w, r)
+
 }
 
 func indexHandler(w http.ResponseWriter, r *http.Request) {

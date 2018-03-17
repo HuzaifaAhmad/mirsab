@@ -11,10 +11,6 @@ import (
 
 //Contact renders the admin contact page
 func Contact(w http.ResponseWriter, r *http.Request) {
-	email := getSession(r)
-	if email == "" {
-		http.Redirect(w, r, "/login", 302)
-	}
 	c, err := models.GetContacts()
 	if err != nil {
 		log.Fatal(err)
@@ -27,10 +23,6 @@ func Contact(w http.ResponseWriter, r *http.Request) {
 
 //ContactDetails handles details for contacts on admin panel
 func ContactDetails(w http.ResponseWriter, r *http.Request) {
-	email := getSession(r)
-	if email == "" {
-		http.Redirect(w, r, "/login", 302)
-	}
 
 	vars := mux.Vars(r)
 	id := vars["id"]
@@ -43,6 +35,7 @@ func ContactDetails(w http.ResponseWriter, r *http.Request) {
 		log.Fatal(err)
 	}
 	var cnt models.Contact
+	//checking db against url param
 	for _, val := range c {
 		if val.ID == intg {
 			cnt = val
