@@ -13,8 +13,8 @@ var ch = function(e) {
             if(x.responseText !=""){
                 imgs.push("data:image/png;base64," + x.responseText + "\ ");
                 sendImgs.push(x.responseText);
-                var test = document.getElementById('imgs');
-                test.innerHTML += '<img id= '+ counter +' onclick="del(event)" src=\ '+ imgs[counter] + '/>';
+                var img = document.getElementById('imgs');
+                img.innerHTML += '<img id= '+ counter +' onclick="del(event)" src=\ '+ imgs[counter] + '/>';
                 counter++;
             }
             console.log(imgs.length);
@@ -56,17 +56,24 @@ var upload = function(e){
 
 var deletePic = function(e) {
     e.preventDefault();
-
-    var elemet = e.target.src;
-    console.log(elemet)
+    var elemet = e.currentTarget.children[0].src;
+    elemet = elemet.split("/portfolio")
+    elemet =elemet[1].split("?")
+    
+    var cont = confirm("Are you sure you want to delete this picture? ");
+    if(!cont) {
+        return;
+    }
+    
     var x = new XMLHttpRequest();
     x.onreadystatechange = function() {
         if(x.readyState ==4 ){
-            window.location.reload();
+            location.reload(true);
+            
         }
     }
     x.open("POST", "portfolio/delete");
-    x.send(elemet);
+    x.send(elemet[0]);
 }
 
 var contactRow = function(e) {

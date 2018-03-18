@@ -9,6 +9,7 @@ import (
 	"io"
 	"io/ioutil"
 	"log"
+	"math/rand"
 	"net/http"
 	"os"
 	"path/filepath"
@@ -23,19 +24,23 @@ type File struct {
 
 // Imgs is package level
 type Imgs struct {
-	Img []string
+	Img  string
+	Rand int
 }
+
+var img Imgs
 
 //Portfolio reads all images in static/imgs/portfolio dir and send it to the portfolio template
 func Portfolio(w http.ResponseWriter, r *http.Request) {
-	var imgSrc []string
+	var imgSrc []Imgs
 
 	root := "static/img/portfolio/"
 	err := filepath.Walk(root, func(path string, info os.FileInfo, err error) error {
 		if info.IsDir() {
 			return nil
 		}
-		imgSrc = append(imgSrc, path)
+		img.Img = path
+		imgSrc = append(imgSrc, img)
 		return nil
 	})
 
@@ -43,12 +48,11 @@ func Portfolio(w http.ResponseWriter, r *http.Request) {
 		panic(err)
 	}
 	for i := range imgSrc {
-		imgSrc[i] = strings.TrimPrefix(imgSrc[i], "static/")
+		imgSrc[i].Img = strings.TrimPrefix(imgSrc[i].Img, "static/")
+		img.Rand = rand.Int()
 	}
 
-	err = tpl.ExecuteTemplate(w, "portfolio.gohtml", Imgs{
-		Img: imgSrc,
-	})
+	err = tpl.ExecuteTemplate(w, "portfolio.gohtml", imgSrc)
 	if err != nil {
 		log.Fatalf("template execution: %s", err)
 	}
@@ -150,11 +154,9 @@ func Delete(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	toString := string(bs)
-	prefix := "http://localhost:8080"
-	ns := strings.TrimPrefix(toString, prefix)
+	path := string(bs)
 
-	err = os.Remove("static" + ns)
+	err = os.Remove("static/img/portfolio" + path)
 	if err != nil {
 		http.Error(w, "Error Deleting File", http.StatusInternalServerError)
 		log.Println(err)

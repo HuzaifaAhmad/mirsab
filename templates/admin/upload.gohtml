@@ -6,13 +6,14 @@
     </div>
     <div class="addPic">
         <form action="" id="form" method="POST" enctype="multipart/form-data">
+            <p style="margin-bottom: 5px;">Use .jpeg/.jpg files(for now)</p>
             <input type="file" name="file" id="file" class="inputfile" onchange="ch(event)"/>
             <label for="file">Choose a file</label>
         </form>
     </div>
     <div id="imgs">
     </div>
-    <button type="submit" onclick="upload(event)">Submit</button>
+    <button type="submit" class="btn" onclick="upload(event)">Submit</button>
 </div>
 
 {{ template "footer" }}

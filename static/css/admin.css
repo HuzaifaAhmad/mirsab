@@ -251,41 +251,69 @@ li a {
 	margin-top: auto;
 }
 
-.fas {
+.fa-sign-out-alt {
 	margin-left: 8px;
 }
 
+
+
+/* -------------- Portfolio --------------*/
 .portfolio {
 	width: 100%;
 	padding: 20px;
 }
 
 .imgs {
-	padding: 5px;
-	font-size: 0;
+	margin: .5vw;
 	display: -ms-flexbox;
-	-ms-flex-wrap: wrap;
-	flex-wrap: wrap;
-	-ms-flex-direction: column;
-	flex-direction: column;
-	-webkit-flex-flow: row wrap; 
-	flex-flow: row wrap; 
-	justify-content: center;
+	-ms-flexbox-wrap:wrap;
+	-ms-flexbox-direction: column;
+	-webkit-flex-flow: row-wrap;
+	flex-flow: row wrap;
 	display: -webkit-box;
 	display: flex;
 }
 
-.col {
+.imgs .col {
 	-webkit-box-flex: auto;
 	-ms-flex: auto;
 	flex: auto;
-	width: 200px; 
-	margin: .5vw
+	width: 200px;
+	margin: .5vw;
+	line-height: .5;
+	text-align: center;
+	position: relative;
 }
 
 .imgs .col img {
 	width: 100%;
+	max-width: 500px;
 	height: auto;
+}
+
+.overlay {
+	opacity: 0;
+	height: 99.5%;
+    width: 100%;
+    background-color: #00000075;
+    position: absolute;
+    top: 0px;
+}
+
+.overlay:hover{
+	opacity: 100;
+	cursor: pointer;
+}
+
+.icon {
+	color: #e7e7e7;
+	position: absolute;
+    top: 50%;
+    left: 20px;
+    right: 20px;
+    transform: translateY(-50%);
+    display: inline-block;
+    font-size: 40px;
 }
 
 .addPic a {
@@ -326,11 +354,13 @@ li a {
 .inputfile + label {
     font-size: .9em;
 	font-weight: 500;
-	padding: 10px;
+	padding: 15px 45px;
+	margin-bottom: 20px;
     color: white;
     background-color:#000064;
 	display: inline-block;
 	cursor: pointer;
+	border-radius: 2px;
 }
 
 .inputfile:focus + label,
@@ -338,6 +368,9 @@ li a {
     background-color: #0000a5;
 }
 
+
+
+/* ------------------- Contact ---------------*/
 .contact {
 	width: 100%;
 	padding: 20px;
@@ -345,7 +378,7 @@ li a {
 
 table {
 	font-family: arial, sans-serif;
-	font-size: .9em;
+	font-size: .9em; 
     border-collapse: collapse;
     width: 100%;
 }
@@ -377,4 +410,13 @@ td, th {
 	margin: 10px;
 	padding: 20px;
 	background-color: #e7e7e7;
+}
+
+
+#imgs {
+	min-height: 450px;
+}
+
+#imgs img {
+	margin: 0px 20px 10px 0px;
 }

@@ -11,10 +11,15 @@
         </div>
     </div>
 
+
     <div class="imgs">
-            {{ range .Img }}
-            <div class="col">
-                <img onclick="deletePic(event)" src= "/{{ . }} "alt="" srcset="">
+            {{ range . }}
+            <div class="col" onclick="deletePic(event)" >
+                <img src= "/{{ .Img }}?v={{ .Rand }} "alt="" srcset="" class="portfolioImage">
+                <div class="overlay">
+                    <div class="icon"><i class="fas fa-trash-alt"></i></div>
+                </div>
+                
             </div>
             {{ end }}
     </div>

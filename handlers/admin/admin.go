@@ -23,6 +23,9 @@ func Dashboard(w http.ResponseWriter, r *http.Request) {
 
 // Upload renders upload template
 func Upload(w http.ResponseWriter, r *http.Request) {
+	//set cache to none
+	w.Header().Set("Cache-Control", "max-age=0") // 30 days
+
 	err := tpl.ExecuteTemplate(w, "upload.gohtml", nil)
 	if err != nil {
 		log.Fatalf("template execution: %s", err)

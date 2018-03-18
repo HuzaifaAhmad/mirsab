@@ -293,10 +293,8 @@ p {
 	background-color: #000064;
 }
 
-@media (max-width: 768px){
-	.navWrapper.active{
-		left: 0px;
-	}
+.navWrapper.active{
+	left: 0px;
 }
 
 /* ______________________________________*/
