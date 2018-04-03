@@ -13,75 +13,86 @@
         <title>Mirsab Mirza</title>
     </head>
     <body>
+        <div class="navWrapper" id="nav">        
+            <nav class="nav">
+                <ul>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Projects</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="#"><button class="btn">Personal Coaching</button></a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="deskNav">
+            <div class="nav">
+                <ul>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/#">Portfolio</a></li>
+                    <li><a href="/#">Projects</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="#"><button class="btn">Personal Coaching</button></a></li>
+                </ul>
+            </div>
+        </div>
         <div class="header" id="header">
             <div class="logo">
                 <h1 class="logoText"><a href="/">Mirsab Mirza</a></h1>
             </div>
-            <div class="toggleBar" id="t">
-                <span class="toggle"></span>
-                <span class="toggle"></span>
-                <span class="toggle"></span>
-                <span class="toggle"></span>
-            </div>
-            <hr>
-            <div class="navWrapper" id="nav">
-                
-                <nav class="nav">
-                    <ul>
-                        <li><a href="/about">About</a></li>
-                        <li><a href="#">Coaching</a></li>
-                        <li><a href="#">Portfolio</a></li>
-                        <li><a href="#">Projects</a></li>
-                        <li><a href="/contact">Contact</a></li>
-                    </ul>
-                </nav>
+           <div class="hamburger hamburger--collapse" id="t">
+                <div class="hamburger-box">
+                    <div class="hamburger-inner"></div>
+                </div>
             </div>
             <div class="slogan">
                 <div class="sloganBar"></div>
-                <h2 class="sloganText">HEALTH. <br> MOTIVATION. <br> LIFESTYLE.</h2>
-            </div>
-            <div class="portfolio">
-                <button class="btn">Coaching</button>
+                <p>Your Personal Coach</p>                
+                <h2 class="sloganText">ARE YOU READY TO TRANSFORM YOUR BODY?</h2>
+                <button class="btn">GET STARTED</button>
             </div>
         </div>
 
-        <div class="container coaching">
+        <section class="about">
+            <div class="title">
+                <h1>My Story</h1>
+            </div>
+            <div class="about-image">
+                <img src="img/about.jpg" alt="" srcset="">
+            </div>
+            <div class="cont"><p>My name is Mirsab Mirza. Since you have clicked on my website, you probably know by now, I'm about health, fitness, and motivation. So a quick backstory: I started my fitness journey in 2012, I was not content with my physique and I was determined to make a change. Present day, i've come a long way, yet I have much more to accomplish regarding my physique. During my fitness journey, I have also discovered a passion to help others transform their bodies to their liking. Since then, to further my understanding of health and fitness, I have become a certified personal trainer. Along with that, I gained admission to Rutgers University's Exercise Physiology program, which I'm on the verge of completing shortly. With my personal experience and knowledge which I have attained, I'm now dedicating myself to helping others. Along with this I also plan to expand my endeavors in other avenues of health and fitness. Thank you for your continued support. </p></div>
+            
+        </section>
+
+        <section class="coaching">
             <div class="title">
                 <h1>Coaching</h1>
             </div>
-            <div class="catg">
+            <div class="catg card1">
                 <div class="icon">
                     <img src="img/Asset1.svg" alt="icon">
                 </div>
                 <h3>Workout Plans</h3>
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus eum laborum deserunt ea molestias! Dicta libero facilis quasi! Dignissimos provident, perspiciatis quaerat veritatis sapiente minima corporis modi deserunt nulla nobis? Ducimus eum laborum deserunt ea molestias! Ducimus eum laborum deserunt ea molestias! Dicta libero facilis quasi! Dignissimos provident</p>
             </div>
-            <div class="catg">
+            <div class="catg card2">
                 <div class="icon">
                     <img src="img/Asset3.svg" alt="icon">
                 </div>
                 <h3>Diet Plans</h3>
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus eum laborum deserunt ea molestias! Dicta libero facilis quasi! Dignissimos provident, perspiciatis quaerat veritatis sapiente minima corporis modi deserunt nulla nobis? Ducimus eum laborum deserunt ea molestias! Ducimus eum laborum deserunt ea molestias! Dicta libero facilis quasi! Dignissimos provident</p>
             </div>
-            <div class="catg">
+            <div class="catg card3">
                 <div class="icon">
                     <img src="img/Asset2.svg" alt="icon">
                 </div>
                 <h3>One on One Training</h3>
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus eum laborum deserunt ea molestias! Dicta libero facilis quasi! Dignissimos provident, perspiciatis quaerat veritatis sapiente minima corporis modi deserunt nulla nobis? Ducimus eum laborum deserunt ea molestias! Ducimus eum laborum deserunt ea molestias! Dicta libero facilis quasi! Dignissimos provident</p>
             </div>
-        </div>
+            <button class="btn coachBtn">GET STARTED</button>
+        </section>
 
-        <div class="container about">
-            <div class="title">
-                <h1>About Me</h1>
-            </div>
-            <div class="abt-img">
-                <img src="img/hqdefault.jpg" alt="" srcset="">
-            </div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus blanditiis error, eveniet repudiandae necessitatibus mollitia tempore maxime itaque numquam deserunt minima harum quia repellat corporis libero perspiciatis ullam id vero.</p>
-        </div>
-        <div class="container footer">
+        
+        <section class="footer">
             <div class="social">
                 <div class="follow-title">
                     <p>Follow Me</p>
@@ -98,7 +109,7 @@
                 
     
             </div>
-        </div>
+        </section>
         <script src="js/main.js"></script>
     </body>
 </html>
