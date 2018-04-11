@@ -25,6 +25,7 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 html {
+	overflow-x: hidden;
 	height: 100%;
 	box-sizing: border-box;
 }
