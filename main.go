@@ -21,6 +21,7 @@ func main() {
 	r.HandleFunc("/about", aboutHandler)
 	r.HandleFunc("/contact", contactHandler).Methods("GET")
 	r.HandleFunc("/contact", handlers.Contact).Methods("POST")
+	r.HandleFunc("/portfolio", portfolioHandler).Methods("GET")
 	r.HandleFunc("/login", loginHanler).Methods("GET")
 	r.HandleFunc("/login", admin.Login).Methods("POST")
 	r.HandleFunc("/logout", admin.Logout)
@@ -78,6 +79,13 @@ func aboutHandler(w http.ResponseWriter, r *http.Request) {
 
 func contactHandler(w http.ResponseWriter, r *http.Request) {
 	handlers.ContactPage(w, r, tpl)
+}
+
+func portfolioHandler(w http.ResponseWriter, r *http.Request) {
+	err := tpl.ExecuteTemplate(w, "portfolio.gohtml", nil)
+	if err != nil {
+		log.Fatalf("template execution: %s", err)
+	}
 }
 
 func loginHanler(w http.ResponseWriter, r *http.Request) {
