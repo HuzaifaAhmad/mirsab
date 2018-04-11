@@ -12,7 +12,7 @@ const (
 	host     = "localhost"
 	port     = 5432
 	user     = "postgres"
-	password = "psqlpass"
+	password = "silvermoon_1287"
 	dbname   = "mirsab"
 )
 
